@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+
+    <h:head>
+        <title>Facelet Title</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+        <c:if test="${1 == 1}">
+            <h1>Apenas um projeto simples</h1>
+        </c:if>
+        <p>
+            JSF e JSP foram grandes técnologias no 'passado' que foram substituidas por tecnologias mais poderosas hoje em dia.
+            <br/>
+            Frameworks como react, angular e vue dominaram o mercado front-end, e escrever paginas do lado do
+            servidor não é algo tão atraente mais hoje em dia.
+            <br/>
+            É interessante ter uma noção sobre os recursos como os name spaces disponíveis e os recursos que podem ser utilizados
+            como jsf, facelets e o jsp padrão para manutenção em código antigo, mais.
+            <br/>
+            Sim, apenas isto....
+        </p>
+        <br/>
+
+        <h2>
+            Do some ui:include for component composition, or get some data from managed scope beans with expression language
+            And you can do some cool stufs, but create large websites with complex things will be an very difficult thing.
+
+            When you mix front-end with back-end, most allways will result in a mess of your code/project.
+        </h2>
+
+        <footer>
+            <p>
+                Yeah, JSF is now dead. But we have hope with jackarta, maybe this can get somewhere someday.
+                Ps: I wasn`t good at english, so this text could have some erros, bye
+            </p> 
+
+            <c:choose>
+                <c:when test="${param.name != null}">
+                    #{param.name}
+                    <br/>
+                    <form action="" method="GET">
+                        <h:commandButton action="#{param.clear()}" value="Clear name" />
+                    </form>
+                </c:when>
+
+                <c:otherwise>
+                    <form action="" method="GET">
+                        <p:inputText id="name" placeholder="your name here"/>
+                        <button  type="submit" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" >
+                            Submit
+                        </button>
+                    </form>
+                </c:otherwise>
+            </c:choose>
+        </footer>
+    </h:body>
+</html>
